@@ -12,7 +12,10 @@
 </head>
 <body>
   <header class="page-header">
-    <h1>Django Girls Marseille - Blog</h1>
+    {% if user.is_authenticated %}
+      <a href="{% url 'post_new' %}" class="top-menu"><span class="glyphicon glyphicon-plus"></span></a>
+    {% endif %}
+    <h1><a href="/">Django Girls Marseille - Blog</a></h1>
   </header>
 
   <main>
